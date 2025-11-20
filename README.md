@@ -79,7 +79,7 @@ Upload a PDF → get instant structured JSON → download the final output.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/AI-Analsyer-AGENT.git
+git clone https://github.com/harsh-bhati/AI-Analsyer-AGENT.git
 cd AI-Analsyer-AGENT
 ```
 
@@ -162,15 +162,3 @@ The UI will allow you to:
   ]
 }
 ```
-
----
-
-## 🛠️ Tech Stack
-
-* **Python**
-* **Streamlit**
-* **PyPDF2**
-* **OpenAI GPT-4o-mini**
-* **dotenv**
-
----
