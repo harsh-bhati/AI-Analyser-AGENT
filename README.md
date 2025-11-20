@@ -2,14 +2,8 @@
 **AI-powered Legislative Document Analyzer** — Upload a PDF of an Act and automatically generate a structured legal summary, extract statutory elements (definitions, eligibility, obligations, penalties, etc.), and evaluate compliance with predefined rule checks.
 Built with **Python, Streamlit, PyPDF2, OpenAI GPT-4o-mini**, and includes a complete JSON output pipeline.
 
----
 
-# 📘 **README.md (Full, Polished, Professional)**
-
-````markdown
-# 📘 AI-Analyser-AGENT
-
-An end-to-end AI tool that analyzes legal Acts from PDF files and produces:
+This is an end-to-end AI tool that analyzes legal Acts from PDF files and produces:
 
 - ✅ A clean **summary** (purpose, definitions, eligibility, obligations, enforcement, etc.)
 - ✅ Structured **legislative section extraction** (definitions, responsibilities, payments, penalties, etc.)
