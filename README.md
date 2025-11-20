@@ -140,11 +140,6 @@ The UI will allow you to:
 ---
 
 ## 📸 UI Screenshot
-<img width="1920" height="1080" alt="Screenshot (4769)" src="https://github.com/user-attachments/assets/82c3fbd3-d315-4401-b844-6f9c4f981280" />
-<img width="1920" height="1080" alt="Screenshot (4770)" src="https://github.com/user-attachments/assets/69dd9c9b-dc46-44ab-8c41-92987d6ce865" />
-<img width="1920" height="1080" alt="Screenshot (4771)" src="https://github.com/user-attachments/assets/6aaa1f88-42e8-4342-8905-cacfd8286ebc" />
-<img width="1920" height="1080" alt="Screenshot (4772)" src="https://github.com/user-attachments/assets/f6740b5a-75c8-4e45-86b7-6417e4e0a307" />
-<img width="1920" height="1080" alt="Screenshot (4773)" src="https://github.com/user-attachments/assets/4a8fccc3-d459-4712-8054-fa501a98e5a7" />
 
 ---
 
