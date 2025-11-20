@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="Screenshot (4769)" src="https://github.com/user-attachments/assets/8c03d1d7-7681-470e-9422-bded237b22fb" /># AI-Analyser-AGENT
+# AI-Analyser-AGENT
 **AI-powered Legislative Document Analyzer** — Upload a PDF of an Act and automatically generate a structured legal summary, extract statutory elements (definitions, eligibility, obligations, penalties, etc.), and evaluate compliance with predefined rule checks.
 Built with **Python, Streamlit, PyPDF2, OpenAI GPT-4o-mini**, and includes a complete JSON output pipeline.
 
