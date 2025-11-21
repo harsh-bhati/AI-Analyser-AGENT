@@ -2,7 +2,7 @@
 🚀 Live Demo: (https://harsh-ai-agent.streamlit.app/)
 
 
-Watch the video demonstration : [Google drive link to video](https://drive.google.com/file/d/1SWF3RMpSEc3NjkN-DQMHnddVpZma3ay0/view?usp=sharing)
+Watch the video demonstration : [Google drive link to video](https://drive.google.com/file/d/1KfPmKWiMagKHizR1XoROJSSuwQeZwNer/view?usp=sharing)
 
 **AI-powered Legislative Document Analyzer** — Upload a PDF of an Act and automatically generate a structured legal summary, extract statutory elements (definitions, eligibility, obligations, penalties, etc.), and evaluate compliance with predefined rule checks.
 Built with **Python, Streamlit, PyPDF2, OpenAI GPT-4o-mini**, and includes a complete JSON output pipeline.
