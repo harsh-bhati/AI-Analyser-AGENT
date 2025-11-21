@@ -27,7 +27,7 @@ if uploaded_pdf:
     # print(sections)
     # ---- Rule Checks ----
     st.info("Running rule checks...")
-    rules_output = apply_rule_checks(sections)
+    rules_output = apply_rule_checks(sections, full_text)
 
     # Combine final output
     final_output = {
