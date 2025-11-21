@@ -92,45 +92,59 @@ ACT TEXT:
 # -------------------------------------------
 
 
-def apply_rule_checks(sections):
-    rules = {
-        "Act must define key terms": "definitions",
-        "Act must specify eligibility criteria": "eligibility",
-        "Act must specify responsibilities of the administering authority": "responsibilities",
-        "Act must include enforcement or penalties": "penalties",
-        "Act must include payment calculation or entitlement structure": "payments",
-        "Act must include record-keeping or reporting requirements": "record_keeping",
-    }
-
+def apply_rule_checks(sections, full_text):
+    rules = [
+        "Act must define key terms",
+        "Act must specify eligibility criteria",
+        "Act must specify responsibilities of the administering authority",
+        "Act must include enforcement or penalties",
+        "Act must include payment calculation or entitlement structure",
+        "Act must include record-keeping or reporting requirements"
+    ]
+    
     results = []
 
-    for rule, field in rules.items():
-        content = sections.get(field)
-        # print(content)
-        # Convert dict to plain string if needed
-        if isinstance(content, dict):
-            text = " ".join(content.values())
-        else:
-            text = str(content or "")
+    for rule in rules:
+        prompt = f"""
+You are a legislative compliance checker.
 
-        # Simple pass/fail based on length
-        if len(text.strip()) > 10:
-            status = "pass"
-            evidence = text[:180] + "..."
-            confidence = 95
-        else:
-            status = "fail"
-            evidence = ""
-            confidence = 40
+Your task: Determine whether the following rule is satisfied by the Act text.
 
-        results.append({
-            "rule": rule,
-            "status": status,
-            "evidence": evidence,
-            "confidence": confidence
-        })
+RULE:
+{rule}
+
+ACT TEXT:
+{full_text[:25000]}
+
+Provide a JSON response ONLY in this format:
+
+{{
+ "rule": "",
+ "status": "pass" or "fail",
+ "evidence": "quote exact lines from the Act proving your answer",
+ "confidence": 0-100
+}}
+"""
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        try:
+            result_json = json.loads(response.choices[0].message.content)
+        except:
+            result_json = {
+                "rule": rule,
+                "status": "fail",
+                "evidence": "LLM returned invalid JSON",
+                "confidence": 20
+            }
+
+        results.append(result_json)
 
     return results
+
 
 # ------------------------------
 # MAIN PIPELINE
@@ -149,7 +163,7 @@ if __name__ == "__main__":
     sections = extract_sections(full_text)
 
     print("\nRunning rule checks...")
-    rules_output = apply_rule_checks(sections)
+    rules_output = apply_rule_checks(sections, full_text)
 
     final_output = {
         "summary": summary,
